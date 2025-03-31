@@ -56,7 +56,7 @@ if (sendButton)
       messageInput.value = "";
 
       const response = await fetch(
-        `http://localhost:5000/generate-clean-speech?text=${message}`
+        `http://localhost:5000/detoxify?text=${message}`
       );
       const data = await response.json();
       console.log(data);

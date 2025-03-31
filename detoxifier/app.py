@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from dotenv import load_dotenv
 from google import genai
 
@@ -12,6 +13,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 app = Flask(__name__)
+CORS(app)
 
 # toxicity_analyzer.py
 from detoxify import Detoxify
