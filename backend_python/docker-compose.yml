@@ -4,7 +4,8 @@ services:
     ports:
       - "5100:5100"
     volumes:
-      - huggingface-cache:/root/.cache/huggingface/transformers
+      - model-cache:/root/.cache  # Cache all AI model files and libraries
+      - torch-cache:/root/.cache/torch  # Specific cache for PyTorch models
     deploy:
       resources:
         reservations:
@@ -14,4 +15,5 @@ services:
               capabilities: [gpu]
 
 volumes:
-  huggingface-cache:
+  model-cache:
+  torch-cache:

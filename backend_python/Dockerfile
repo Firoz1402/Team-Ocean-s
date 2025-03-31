@@ -1,11 +1,10 @@
 # Use the specified TensorFlow GPU Jupyter image as the base image.
-FROM tensorflow/tensorflow:2.11.0-gpu-jupyter
+FROM python:latest
 
 # Set the working directory.
 WORKDIR /app
 
-RUN pip install transformers
-RUN pip install torch
+RUN pip install --upgrade pip
 # Copy requirements and install them.
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
