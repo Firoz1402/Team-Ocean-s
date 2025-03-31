@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chat-body">
+        <header>
+            <h5 style="margin: 0px;">Civility.<span class="suffix">AI</span></h5>
+        </header>
+        <h1 class="chat-body-header ">
+            Write your message <br /> here.
+        </h1>
+        <div class="message-container no-scrollbar" style="height: 85%; ">
+        </div>
+
+    </div>
+    <footer class="chat-body-footer" style="display: flex; flex-direction: column; gap: 1.2rem;">
+        <div style="position: relative;">
+            <textarea placeholder="type here..." class="message-text" oninput="adjustHeight(this)"></textarea>
+            <button class="send-button"
+                style="background: none; border: none; outline: none; position: absolute; right: 0; padding-right: 0.6rem;">
+                <img src="SendButton.svg" alt="send message" style="height: 3rem; aspect-ratio: 1;" />
+            </button>
+        </div>
+        <div class="progress-container" style="display: flex; gap: 1rem;">
+            <label for="toxicity-progress" class="progress-label" style="color: wheat;">Toxicity Score:</label>
+            <progress id="toxicity-progress" value="0" max="100"></progress>
+            <span id="toxicity-percentage" style="color: wheat;">0%</span>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
